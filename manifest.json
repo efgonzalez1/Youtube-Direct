@@ -1,0 +1,16 @@
+{
+  "name": "Youtube Direct",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Go directly to your Youtube videos by accessing the 'googleapis' link. Added bonus: bypass age restriction.",
+  "background": "background.html",
+  "browser_action": {
+    "name": "Manipulate DOM",
+    "icons": ["icon.png"],
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [ {
+    "js": [ "jquery-1.9.0.min.js", "background.js" ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}
