@@ -16,7 +16,7 @@ Setup
 Usage
 =====
 You will notice that Youtube links now look something like:
-http://www.youtube.com/v/XXXXXXX
-This takes you directly to the video which takes up your entire page.
+http://www.youtube.com/v/XXXXXXXXXXX
+This takes you directly to the video which takes up your entire page. [Try out this link for an example]
 Links within the video like the title will take you to the standard Youtube page with the description, comments, etc.
 Also, as an added bonus, this direct video link will bypass any age restrictions so you don't need to be signed in to verify your age.
