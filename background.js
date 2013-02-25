@@ -1,20 +1,13 @@
-function youtube_parser(url){
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-    var match = url.match(regExp);
-    if (match&&match[7].length==11){
-        return match[7];
-    }else{
-        console.debug(url + ": FAILED!!!");
-    }
+//Thanks to ridgerunner @ stackexchange for the regex!
+function ytPrettify(text) {
+    var re = /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube\.com\S*[^\w\-\s])([\w\-]{11})(?=[^\w\-]|$)(?![?=&+%\w]*(?:['"][^<>]*>|<\/a>))[?=&+%\w-]*/ig;
+    return text.replace(re, "https://youtube.googleapis.com/v/$1");
 }
 
 function directLinks(){
     $("a[href]").each(function () {
         var href = $(this).attr('href');
-        var id = youtube_parser(href);
-        if(id){
-            href = "https://youtube.googleapis.com/v/" + id;
-        }
+        href = ytPrettify(href);
         $(this).attr('href', href);
     });
     console.debug("Links updated.");
