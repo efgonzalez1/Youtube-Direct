@@ -3,14 +3,27 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "Go directly to your Youtube videos by accessing the 'googleapis' link. Added bonus: bypass age restriction.",
-  "background": "background.html",
-  "browser_action": {
-    "name": "Manipulate DOM",
-    "icons": ["icon.png"],
-    "default_icon": "icon.png"
+  "icons": { 
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
+  "background": {
+    "scripts": ["button.js"]
+  },
+  "permissions":[
+    "tabs", "http://*/*", "https://*/*"
+  ],
   "content_scripts": [ {
     "js": [ "jquery-1.9.0.min.js", "background.js" ],
     "matches": [ "http://*/*", "https://*/*"]
-  }]
+  }],
+  "browser_action": {
+    "default_icon": {                    
+      "19": "icon.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Disable Youtube Direct"
+  }
 }
